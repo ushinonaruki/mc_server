@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mc-server:
+    build: ./minecraft-bedrock-server
+    container_name: mc_server_1
+    restart: always
+    ports:
+      - "19132:19132/udp"
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./minecraftWorlds_volume:/data
